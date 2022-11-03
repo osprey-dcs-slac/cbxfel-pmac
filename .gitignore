@@ -5,4 +5,5 @@ lib/
 bin/
 O.Common/
 O.linux-x86_64/
+O.rhel6-x86_64/
 
