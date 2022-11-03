@@ -1,0 +1,15 @@
+# cbxfelPmacAxes: substitution file to read axis status
+# using powerPmac
+
+# pmacStatusAxis: collect information about a specific axis
+# position, velocity, following error, status1, status2, status3
+# Macros:
+#  PMAC  Pmac/Geobrick name
+#  AXIS  Axis number
+#  PORT  Asyn port
+file pmacStatusAxis.template
+{
+pattern { PMAC    ,  AXIS      ,  PORT     }
+        { "$(MOC)", "$(AXIS1)", "$(PORT)"  }
+        { "$(MOC)", "$(AXIS2)", "$(PORT)"  }
+}

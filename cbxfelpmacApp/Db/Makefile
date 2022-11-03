@@ -6,7 +6,16 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------------------
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
-#DB += xxx.db
+DB_INSTALLS += $(PMAC)/db/pmacController.template
+DB_INSTALLS += $(PMAC)/db/powerPmacStatus.template
+DB_INSTALLS += $(PMAC)/db/pmacStatusAxis.template
+
+DB += cbxfelPmacController.db
+DB += cbxfelPmacAxes.db
+
+DB_INSTALLS += $(AUTOSAVE)/db/save_restoreStatus.db
+DB_INSTALLS += $(IOCADMIN)/db/iocAdminSoft.db
+DB_INSTALLS += $(ASYN)/db/asynRecord.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add

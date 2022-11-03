@@ -1,0 +1,15 @@
+
+lobalStatus.template
+# NOTE: this is a re-implementation of the <Dev>:GLOBAL_PROBLEM_RBV PV from the pmac module
+# Modifications: SCAN time from I/O intr to 1 second, alarm severity when PV has value 1
+
+record(bi, "$(P):GlobalProblem")
+{
+   field(DESC, "Pmac Global Problem")
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),0,$(TIMEOUT=4))PMAC_C_GLOBALSTATUS")
+   field(SCAN, "1 second")
+   field(ZNAM, "Status OK")
+   field(ONAM, "Status Problem")
+   field(OSV, "MAJOR")
+}
