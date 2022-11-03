@@ -1,5 +1,4 @@
-
-lobalStatus.template
+# pmacGlobalStatus.template
 # NOTE: this is a re-implementation of the <Dev>:GLOBAL_PROBLEM_RBV PV from the pmac module
 # Modifications: SCAN time from I/O intr to 1 second, alarm severity when PV has value 1
 
