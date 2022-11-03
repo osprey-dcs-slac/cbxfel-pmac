@@ -32,12 +32,12 @@ cbxfelpmac_LIBS += autosave
 cbxfelpmac_LIBS += caPutLog
 cbxfelpmac_LIBS += devIocStats
 
-cbxfelpmac_LIBS += asyn
 cbxfelpmac_LIBS += busy
+cbxfelpmac_LIBS += pmacAsynMotorPort
+cbxfelpmac_LIBS += powerPmacAsynPort
 cbxfelpmac_LIBS += motor
 cbxfelpmac_LIBS += pmacAsynIPPort
-cbxfelpmac_LIBS += powerPmacAsynPort
-cbxfelpmac_LIBS += pmacAsynMotorPort
+cbxfelpmac_LIBS += asyn
 
 # cbxfelpmac_registerRecordDeviceDriver.cpp derives from cbxfelpmac.dbd
 cbxfelpmac_SRCS += cbxfelpmac_registerRecordDeviceDriver.cpp
