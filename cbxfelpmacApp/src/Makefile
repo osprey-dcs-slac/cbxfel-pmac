@@ -35,6 +35,26 @@ cbxfelpmac_SRCS_vxWorks += -nil-
 # Add support from base/src/vxWorks if needed
 #cbxfelpmac_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
+# =====================================================
+# Path to "NON EPICS" External PACKAGES: USER INCLUDES
+# ======================================================
+USR_INCLUDES += -I$(SSH2_INCLUDE)
+USR_INCLUDES += -I$(ZLIB_INCLUDE)
+USR_INCLUDES += -I$(CRYPTO_INCLUDE)
+
+# ======================================================
+# PATH TO "NON EPICS" EXTERNAL PACKAGES: USER LIBRARIES
+# ======================================================
+ssh2_DIR   = $(SSH2_LIB)
+crypto_DIR = $(CRYPTO_LIB)
+z_DIR      = $(ZLIB_LIB)
+
+# ======================================================
+# LINK "NON EPICS" EXTERNAL PACKAGE LIBRARIES STATICALLY
+# =======================================================
+USR_LIBS_Linux += ssh2 crypto z
+USR_SYS_LIBS   += pcre
+
 # Finally link to the EPICS Base libraries
 cbxfelpmac_LIBS += $(EPICS_BASE_IOC_LIBS)
 
