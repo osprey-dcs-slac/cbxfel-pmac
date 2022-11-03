@@ -16,18 +16,16 @@ cbxfelpmac_registerRecordDeviceDriver pdbbase
 
 # System Location:
 epicsEnvSet("IOC_NAME", "SIOC:CBXFEL:PMAC01Test")
+epicsEnvSet("IOC", "sioc-cbxfel-pmac01test")
 epicsEnvSet("LOCATION", "UNDH")
 
 # Number of supported axes
 epicsEnvSet("NAXES", "4")
 
-# Build PVs for first undulator
-epicsEnvSet("SEGMENT1","1350")
-epicsEnvSet("PREFIX1","USEG:${LOCATION}:${SEGMENT1}")
-epicsEnvSet("A1","1")
-epicsEnvSet("A2","2")
+# Build PVs for controller axes
+epicsEnvSet("SEGMENT1","CBXFEL1")
 
-# Build PVs for motion controller (Asyn)
+# Build PVs for motion controller
 epicsEnvSet("CONTR","MOC:${LOCATION}:${SEGMENT1}")
 
 epicsEnvSet("HOSTNAME", "slac-epics-vm")
@@ -42,8 +40,7 @@ epicsEnvSet("ENGINEER", "Alex Montironi, Wayne Lewis")
 # =======================================================
 
 # Create SSH Port
-# drvAsynPowerPMACPortConfigure(PortName,     IPAddress  , Username, Password, Priority, DisableAutoConnect, noProc
-essEos)
+# drvAsynPowerPMACPortConfigure(PortName,     IPAddress  , Username, Password, Priority, DisableAutoConnect, noProcessEos)
 drvAsynPowerPMACPortConfigure("PPMACPort", "${HOSTNAME}", "root", "deltatau", "0", "0", "0")
 
 # Configure Model 3 Controller Driver (100 ms poll rate)
@@ -64,6 +61,8 @@ pmacCreateAxes("PPMAC", "${NAXES}")
 # BEGIN: Load the record databases
 #######################################################################
 
+cd $(TOP)
+
 # =====================================================================
 # Load iocAdmin databases to support IOC Health and monitoring
 # =====================================================================
@@ -80,10 +79,9 @@ dbLoadRecords("db/save_restoreStatus.db", "P=${IOC_NAME}:")
 # Load database for reading encoder offsets
 # =====================================================================
 # Provide PVs for controller
-dbLoadRecords("db/hxrFgEncPmacController.db", "MOC=${CONTR},PORT=PPMAC,N=${NAXES}")
-# Provide PVs for second undulator
-#dbLoadRecords("db/readHXRFgEnc.db", "MOC=${CONTR},U=${PREFIX2},PORT=PPMAC,CELL=${SEGMENT2},AXIS1=${A3},AXIS2=${A4
-}")
+dbLoadRecords("db/cbxfelPmacController.db", "MOC=${CONTR},PORT=PPMAC,N=${NAXES}")
+# Provide PVs for axes
+dbLoadRecords("db/cbxfelPmacAxes.db", "MOC=${CONTR},PORT=PPMAC,AXIS1=1,AXIS2=2")
 
 # =====================================================================
 # Load database for  Asyn communication
