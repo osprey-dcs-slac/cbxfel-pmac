@@ -25,6 +25,7 @@ cbxfelpmac_DBD += busySupport.dbd
 cbxfelpmac_DBD += motorSupport.dbd
 cbxfelpmac_DBD += pmacAsynIPPort.dbd
 cbxfelpmac_DBD += drvAsynPowerPMACPort.dbd
+cbxfelpmac_DBD += devSoftMotor.dbd
 cbxfelpmac_DBD += pmacAsynMotorPort.dbd
 
 # Add all the support libraries needed by this IOC
@@ -35,6 +36,7 @@ cbxfelpmac_LIBS += devIocStats
 cbxfelpmac_LIBS += busy
 cbxfelpmac_LIBS += pmacAsynMotorPort
 cbxfelpmac_LIBS += powerPmacAsynPort
+cbxfelpmac_LIBS += softMotor
 cbxfelpmac_LIBS += motor
 cbxfelpmac_LIBS += pmacAsynIPPort
 cbxfelpmac_LIBS += asyn
