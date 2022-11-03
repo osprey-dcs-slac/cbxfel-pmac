@@ -16,6 +16,10 @@ DBD += cbxfelpmac.dbd
 cbxfelpmac_DBD += base.dbd
 
 # Include dbd files from all support applications:
+cbxfelpmac_DBD += asSupport.dbd
+cbxfelpmac_DBD += devIocStats.dbd
+cbxfelpmac_DBD += caPutLog.dbd
+
 cbxfelpmac_DBD += asyn.dbd
 cbxfelpmac_DBD += motorSupport.dbd
 cbxfelpmac_DBD += pmacAsynIPPort.dbd
@@ -23,6 +27,10 @@ cbxfelpmac_DBD += drvAsynPowerPMACPort.dbd
 cbxfelpmac_DBD += pmacAsynMotorPort.dbd
 
 # Add all the support libraries needed by this IOC
+cbxfelpmac_LIBS += devIocStats
+cbxfelpmac_LIBS += autosave
+cbxfelpmac_LIBS += caPutLog
+
 cbxfelpmac_LIBS += motor
 cbxfelpmac_LIBS += pmacAsynMotorPort
 cbxfelpmac_LIBS += powerPmacAsynPort
