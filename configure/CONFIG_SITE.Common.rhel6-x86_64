@@ -1,0 +1,14 @@
+PKG_ARCH=$(LINUX_VERSION)-x86_64
+
+# =========================================
+# Support for PMAC (SSH2 and CRYPTO) , ZLIB 
+# (only avaiable for rhel6)
+# =========================================
+SSH2_PACKAGE_NAME=libssh2
+SSH2_VERSION=1.8.2
+SSH2_TOP=$(PACKAGE_SITE_TOP)/$(SSH2_PACKAGE_NAME)/$(SSH2_VERSION)
+SSH2_LIB=$(SSH2_TOP)/$(PKG_ARCH)/lib
+SSH2_INCLUDE=$(SSH2_TOP)/$(PKG_ARCH)/include
+
+# End of file
+
