@@ -16,13 +16,17 @@ DBD += cbxfelpmac.dbd
 cbxfelpmac_DBD += base.dbd
 
 # Include dbd files from all support applications:
-cbxfelpmac_DBD += motorSupport.dbd
-cbxfelpmac_DBD += drvAsynPowerPMACPort.dbd
 cbxfelpmac_DBD += asyn.dbd
+cbxfelpmac_DBD += motorSupport.dbd
+cbxfelpmac_DBD += pmacAsynIPPort.dbd
+cbxfelpmac_DBD += drvAsynPowerPMACPort.dbd
+cbxfelpmac_DBD += pmacAsynMotorPort.dbd
 
 # Add all the support libraries needed by this IOC
 cbxfelpmac_LIBS += motor
+cbxfelpmac_LIBS += pmacAsynMotorPort
 cbxfelpmac_LIBS += powerPmacAsynPort
+cbxfelpmac_LIBS += pmacAsynIPPort
 cbxfelpmac_LIBS += asyn
 
 # cbxfelpmac_registerRecordDeviceDriver.cpp derives from cbxfelpmac.dbd
