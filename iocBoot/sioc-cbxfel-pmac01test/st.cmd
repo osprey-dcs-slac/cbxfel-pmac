@@ -11,9 +11,6 @@ cd "${TOP}"
 dbLoadDatabase "dbd/cbxfelpmac.dbd"
 cbxfelpmac_registerRecordDeviceDriver pdbbase
 
-## Load record instances
-#dbLoadRecords("db/xxx.db","user=laci")
-
 # System Location:
 epicsEnvSet("IOC_NAME", "SIOC:CBXFEL:PMAC01Test")
 epicsEnvSet("IOC", "sioc-cbxfel-pmac01test")
