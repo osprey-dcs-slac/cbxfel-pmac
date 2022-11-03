@@ -13,7 +13,6 @@ cbxfelpmac_registerRecordDeviceDriver pdbbase
 
 # System Location:
 epicsEnvSet("IOC_NAME", "SIOC:CBXFEL:PMAC01Test")
-epicsEnvSet("IOC", "sioc-cbxfel-pmac01test")
 epicsEnvSet("LOCATION", "UNDH")
 
 # Number of supported axes
