@@ -21,21 +21,23 @@ cbxfelpmac_DBD += devIocStats.dbd
 cbxfelpmac_DBD += caPutLog.dbd
 
 cbxfelpmac_DBD += asyn.dbd
+cbxfelpmac_DBD += busySupport.dbd
 cbxfelpmac_DBD += motorSupport.dbd
 cbxfelpmac_DBD += pmacAsynIPPort.dbd
 cbxfelpmac_DBD += drvAsynPowerPMACPort.dbd
 cbxfelpmac_DBD += pmacAsynMotorPort.dbd
 
 # Add all the support libraries needed by this IOC
-cbxfelpmac_LIBS += devIocStats
 cbxfelpmac_LIBS += autosave
 cbxfelpmac_LIBS += caPutLog
+cbxfelpmac_LIBS += devIocStats
 
-cbxfelpmac_LIBS += motor
-cbxfelpmac_LIBS += pmacAsynMotorPort
-cbxfelpmac_LIBS += powerPmacAsynPort
-cbxfelpmac_LIBS += pmacAsynIPPort
 cbxfelpmac_LIBS += asyn
+cbxfelpmac_LIBS += busy
+cbxfelpmac_LIBS += motor
+cbxfelpmac_LIBS += pmacAsynIPPort
+cbxfelpmac_LIBS += powerPmacAsynPort
+cbxfelpmac_LIBS += pmacAsynMotorPort
 
 # cbxfelpmac_registerRecordDeviceDriver.cpp derives from cbxfelpmac.dbd
 cbxfelpmac_SRCS += cbxfelpmac_registerRecordDeviceDriver.cpp
